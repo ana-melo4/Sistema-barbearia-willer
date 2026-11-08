@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painel Principal - Barbearia Studio</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="app-layout">
+    <!-- Menu Lateral (Sidebar) -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-logo">✂️</div>
+        <div>
+          <div class="sidebar-title">Barbearia Studio</div>
+          <div class="sidebar-subtitle">Painel de Controle</div>
+        </div>
+      </div>
+
+      <ul class="sidebar-nav">
+        <li>
+          <a href="painel.html" class="active">
+            <span class="nav-icon">📊</span> Início / Painel
+          </a>
+        </li>
+        <li>
+          <a href="clientes.html">
+            <span class="nav-icon">👥</span> Gestão de Clientes
+          </a>
+        </li>
+        <li>
+          <a href="barbeiros.html">
+            <span class="nav-icon">✂️</span> Barbeiros & Cortes
+          </a>
+        </li>
+        <li>
+          <a href="agendamentos.html">
+            <span class="nav-icon">🗓️</span> Agendamentos
+          </a>
+        </li>
+      </ul>
+
+      <div class="sidebar-footer">
+        Barbearia Studio &bull; v1.0
+      </div>
+    </aside>
+
+    <!-- Conteúdo à Direita -->
+    <div class="main-wrapper">
+      <header class="topbar">
+        <div class="topbar-page-title">Visão Geral</div>
+
+        <div class="topbar-user-area">
+          <div class="user-tag">
+            <div class="avatar-circle" id="avatarInicial">U</div>
+            <span id="nomeUsuario">Carregando...</span>
+          </div>
+          <button id="btnLogout" class="btn btn-danger btn-sm">Sair</button>
+        </div>
+      </header>
+
+      <main class="content-area">
+        <!-- Indicadores Rápidos -->
+        <div class="resumo-grid">
+          <div class="resumo-card">
+            <span>Clientes Cadastrados</span>
+            <div class="valor" id="totalClientesContador">--</div>
+          </div>
+          <div class="resumo-card verde">
+            <span>Atendimentos Hoje</span>
+            <div class="valor">6 horários</div>
+          </div>
+          <div class="resumo-card amarelo">
+            <span>Status do Banco</span>
+            <div class="valor" style="font-size: 1.1rem; color: #16a34a;">Conectado</div>
+          </div>
+        </div>
+
+        <!-- Módulos do Sistema -->
+        <div class="card">
+          <div class="card-header">
+            <h3>Módulos de Gestão</h3>
+          </div>
+          <div class="card-body">
+            <div class="modulos-grid">
+              <div class="modulo-box">
+                <h4>Cadastro e Busca de Clientes</h4>
+                <p>Consulte a base de clientes, pesquise por telefone ou nome e realize novos cadastros com proteção LGPD.</p>
+                <div>
+                  <a href="clientes.html" class="btn btn-primary">Acessar Clientes</a>
+                </div>
+              </div>
+
+              <div class="modulo-box">
+                <h4>Equipe de Barbeiros</h4>
+                <p>Visualização da lista de barbeiros da casa, tabela de valores de serviços e tempo estimado de cada corte.</p>
+                <div>
+                  <a href="barbeiros.html" class="btn btn-secondary">Ver Barbeiros</a>
+                </div>
+              </div>
+
+              <div class="modulo-box">
+                <h4>Agenda de Horários</h4>
+                <p>Consulte a grade de agendamentos do dia para organizar a fila e o fluxo de atendimentos da barbearia.</p>
+                <div>
+                  <a href="agendamentos.html" class="btn btn-secondary">Ver Agendamentos</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="painel.js"></script>
+</body>
+</html>

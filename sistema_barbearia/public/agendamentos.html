@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agendamentos - Barbearia Studio</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="app-layout">
+    <!-- Menu Lateral -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-logo">✂️</div>
+        <div>
+          <div class="sidebar-title">Barbearia Studio</div>
+          <div class="sidebar-subtitle">Painel de Controle</div>
+        </div>
+      </div>
+
+      <ul class="sidebar-nav">
+        <li>
+          <a href="painel.html">
+            <span class="nav-icon">📊</span> Início / Painel
+          </a>
+        </li>
+        <li>
+          <a href="clientes.html">
+            <span class="nav-icon">👥</span> Gestão de Clientes
+          </a>
+        </li>
+        <li>
+          <a href="barbeiros.html">
+            <span class="nav-icon">✂️</span> Barbeiros & Cortes
+          </a>
+        </li>
+        <li>
+          <a href="agendamentos.html" class="active">
+            <span class="nav-icon">🗓️</span> Agendamentos
+          </a>
+        </li>
+      </ul>
+
+      <div class="sidebar-footer">
+        Barbearia Studio &bull; v1.0
+      </div>
+    </aside>
+
+    <!-- Conteúdo Principal -->
+    <div class="main-wrapper">
+      <header class="topbar">
+        <div class="topbar-page-title">Agenda do Dia</div>
+
+        <div class="topbar-user-area">
+          <a href="painel.html" class="btn btn-secondary btn-sm">Voltar ao Início</a>
+          <button id="btnLogout" class="btn btn-danger btn-sm">Sair</button>
+        </div>
+      </header>
+
+      <main class="content-area">
+
+        <!-- Tabela de Agendamentos -->
+        <div class="card">
+          <div class="card-header">
+            <h3>Horários Marcados de Hoje</h3>
+            <span class="badge badge-info">6 atendimentos</span>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="tabela-dados">
+                <thead>
+                  <tr>
+                    <th>Horário</th>
+                    <th>Cliente</th>
+                    <th>Barbeiro</th>
+                    <th>Serviço Escolhido</th>
+                    <th style="text-align: center;">Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>09:00</strong></td>
+                    <td>Rafael Moreira</td>
+                    <td>Marcos Rogério</td>
+                    <td>Corte Degradê</td>
+                    <td style="text-align: center;"><span class="badge badge-sucesso">Concluído</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>10:00</strong></td>
+                    <td>Bruno Henrique</td>
+                    <td>Lucas Silva</td>
+                    <td>Combo Cabelo + Barba</td>
+                    <td style="text-align: center;"><span class="badge badge-sucesso">Concluído</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>11:30</strong></td>
+                    <td>Fernando Dantas</td>
+                    <td>Gabriel Freitas</td>
+                    <td>Corte Tradicional Tesoura</td>
+                    <td style="text-align: center;"><span class="badge badge-info">Em Atendimento</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>14:00</strong></td>
+                    <td>Gabriel Souza</td>
+                    <td>Marcos Rogério</td>
+                    <td>Barba Terapia</td>
+                    <td style="text-align: center;"><span class="badge badge-info">Confirmado</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>15:30</strong></td>
+                    <td>Thiago Alves</td>
+                    <td>Lucas Silva</td>
+                    <td>Combo Cabelo + Barba</td>
+                    <td style="text-align: center;"><span class="badge badge-info">Confirmado</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>17:00</strong></td>
+                    <td>Lucas Meireles</td>
+                    <td>Gabriel Freitas</td>
+                    <td>Corte Degradê Navalhado</td>
+                    <td style="text-align: center;"><span class="badge badge-info">Aguardando</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <script>
+    if (!localStorage.getItem('token')) {
+      window.location.href = 'index.html';
+    }
+    const btnSair = document.getElementById('btnLogout');
+    if (btnSair) {
+      btnSair.addEventListener('click', () => {
+        if (confirm('Deseja realmente sair?')) {
+          localStorage.clear();
+          window.location.href = 'index.html';
+        }
+      });
+    }
+  </script>
+</body>
+</html>

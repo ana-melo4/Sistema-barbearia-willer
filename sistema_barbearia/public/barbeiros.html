@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Barbeiros - Barbearia Studio</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="app-layout">
+    <!-- Menu Lateral -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-logo">✂️</div>
+        <div>
+          <div class="sidebar-title">Barbearia Studio</div>
+          <div class="sidebar-subtitle">Painel de Controle</div>
+        </div>
+      </div>
+
+      <ul class="sidebar-nav">
+        <li>
+          <a href="painel.html">
+            <span class="nav-icon">📊</span> Início / Painel
+          </a>
+        </li>
+        <li>
+          <a href="clientes.html">
+            <span class="nav-icon">👥</span> Gestão de Clientes
+          </a>
+        </li>
+        <li>
+          <a href="barbeiros.html" class="active">
+            <span class="nav-icon">✂️</span> Barbeiros & Cortes
+          </a>
+        </li>
+        <li>
+          <a href="agendamentos.html">
+            <span class="nav-icon">🗓️</span> Agendamentos
+          </a>
+        </li>
+      </ul>
+
+      <div class="sidebar-footer">
+        Barbearia Studio &bull; v1.0
+      </div>
+    </aside>
+
+    <!-- Conteúdo Principal -->
+    <div class="main-wrapper">
+      <header class="topbar">
+        <div class="topbar-page-title">Equipe e Serviços</div>
+
+        <div class="topbar-user-area">
+          <a href="painel.html" class="btn btn-secondary btn-sm">Voltar ao Início</a>
+          <button id="btnLogout" class="btn btn-danger btn-sm">Sair</button>
+        </div>
+      </header>
+
+      <main class="content-area">
+
+        <!-- Lista de Barbeiros -->
+        <div class="card">
+          <div class="card-header">
+            <h3>Profissionais da Barbearia</h3>
+          </div>
+          <div class="card-body">
+            <div class="modulos-grid">
+              <div class="modulo-box">
+                <h4>Marcos Rogério (Marcão)</h4>
+                <p>Especialidade: Cortes degradê navalhado, barba completa e alinhamento.</p>
+                <span class="badge badge-sucesso">Plantão Ativo</span>
+              </div>
+
+              <div class="modulo-box">
+                <h4>Lucas Silva</h4>
+                <p>Especialidade: Cortes modernos com tesoura, freestyle e pigmentação.</p>
+                <span class="badge badge-sucesso">Plantão Ativo</span>
+              </div>
+
+              <div class="modulo-box">
+                <h4>Gabriel Freitas</h4>
+                <p>Especialidade: Corte clássico social, barba com toalha quente e finalização.</p>
+                <span class="badge badge-sucesso">Plantão Ativo</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tabela de Preços -->
+        <div class="card">
+          <div class="card-header">
+            <h3>Tabela de Preços de Serviços</h3>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="tabela-dados">
+                <thead>
+                  <tr>
+                    <th>Serviço</th>
+                    <th>Duração</th>
+                    <th>Preço</th>
+                    <th style="text-align: center;">Disponibilidade</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Corte de Cabelo (Social / Degradê)</strong></td>
+                    <td>35 min</td>
+                    <td style="color: #0284c7; font-weight: 600;">R$ 45,00</td>
+                    <td style="text-align: center;"><span class="badge badge-sucesso">Disponível</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Barba Terapia (Toalha Quente)</strong></td>
+                    <td>30 min</td>
+                    <td style="color: #0284c7; font-weight: 600;">R$ 35,00</td>
+                    <td style="text-align: center;"><span class="badge badge-sucesso">Disponível</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Combo Cabelo + Barba</strong></td>
+                    <td>60 min</td>
+                    <td style="color: #0284c7; font-weight: 600;">R$ 70,00</td>
+                    <td style="text-align: center;"><span class="badge badge-sucesso">Mais Pedido</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Acabamento / Pezinho</strong></td>
+                    <td>15 min</td>
+                    <td style="color: #0284c7; font-weight: 600;">R$ 20,00</td>
+                    <td style="text-align: center;"><span class="badge badge-sucesso">Disponível</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <script>
+    if (!localStorage.getItem('token')) {
+      window.location.href = 'index.html';
+    }
+    const btnSair = document.getElementById('btnLogout');
+    if (btnSair) {
+      btnSair.addEventListener('click', () => {
+        if (confirm('Deseja realmente sair?')) {
+          localStorage.clear();
+          window.location.href = 'index.html';
+        }
+      });
+    }
+  </script>
+</body>
+</html>
